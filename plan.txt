@@ -1,0 +1,8 @@
+aim : create game of noughts and crosses using mostly javascript, which tell user who is 
+winner and gives option to restart game and keep score. Building the board as an object in 
+javascript, should allow me to give it all the features needed.
+
+1 : set board div, players and an array to house the board squares. 
+Create a for loop to create cells of the board with an idex.
+
+2 : create functions for game over, draw and winnner.
