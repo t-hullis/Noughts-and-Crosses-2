@@ -1,0 +1,21 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --sqrDimen : 50px;
+    --sqrDimenForGrid : 52px
+}
+#theBoard {
+    background-color: blue;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3,var(--sqrDimenForGrid));
+   
+}
+.square {
+    width: var(--sqrDimen);
+    height: var(--sqrDimen);
+    background-color: black;
+}
