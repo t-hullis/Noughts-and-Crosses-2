@@ -12,9 +12,14 @@ class boardObject {
     }
 }
 for (let index = 0; index < 9; index++) {
-    const div = document.createElement("div");
+    let div = document.createElement("div");
     div.classList.add("square");
-    const square = new boardObject(div, index);
+    let square = new boardObject(div, index);
+    div.onclick = function() {
+        const next = "X";
+        boardObject.state = next
+        console.log("yes" + index)
+    } 
     board.appendChild(div);
     postionArray.push(square);
 }
