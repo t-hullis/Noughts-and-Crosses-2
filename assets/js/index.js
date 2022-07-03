@@ -1,11 +1,21 @@
 let board = document.getElementById("theBoard");
 // array for board postions
-const postionArray = [];
+let postionArray = [];
 
 // use loop to create 3x3 board with correct classes/set up object on board
 // Object
-for (let index = 0; index <= 8; index++) {
-    let div = document.createElement("div");
-    div.classList.add("square")
-    board.appendChild(div)
+class boardObject {
+    constructor(divs,index) {
+        this.divs = divs;
+        this.index = index;
+        this.state = "";
+    }
 }
+for (let index = 0; index < 9; index++) {
+    const div = document.createElement("div");
+    div.classList.add("square");
+    const square = new boardObject(div, index);
+    board.appendChild(div);
+    postionArray.push(square);
+}
+console.log(postionArray)
