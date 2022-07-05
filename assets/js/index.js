@@ -1,6 +1,7 @@
 let board = document.getElementById("theBoard");
 // array for board postions
 let postionArray = [];
+let  next = "X";
 
 // use loop to create 3x3 board with correct classes/set up object on board
 // Object
@@ -16,9 +17,10 @@ for (let index = 0; index < 9; index++) {
     div.classList.add("square");
     let square = new boardObject(div, index);
     div.onclick = function() {
-        const next = "X";
-        boardObject.state = next
-        console.log("yes" + index)
+        boardObject.state = next;
+        next = next == 'X' ? 'O' : 'X';
+        console.log("yes" + index + boardObject.state)
+        div.onclick = false;
     } 
     board.appendChild(div);
     postionArray.push(square);
