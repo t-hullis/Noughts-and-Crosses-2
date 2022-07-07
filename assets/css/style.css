@@ -7,6 +7,9 @@
     --sqrDimen : 50px;
     --sqrDimenForGrid : 52px
 }
+p {
+    color: white;
+}
 #theBoard {
     background-color: blue;
     display: grid;
