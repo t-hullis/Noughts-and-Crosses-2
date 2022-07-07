@@ -49,6 +49,12 @@ function winner() {
     [0, 4, 8],
     [2, 4, 6],
     ];
+    for(let i = 0; i< conditions.length; i++ ) {
+        let condition = conditions[i];
+        let a = postionArray[condition[0]];
+        let b = postionArray[condition[1]];
+        let c = postionArray[condition[2]];
+    }
 }
 
 
