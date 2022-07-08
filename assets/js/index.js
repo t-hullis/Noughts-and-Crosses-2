@@ -21,6 +21,21 @@ class ClassBoardObject {
     }
   }
 
+  function gameOver(overText) {
+    console.log("gogoog")
+    document.getElementById("winner").innerHTML = overText;
+    board.style.display = "none";
+    document.getElementById("gameOver").style.display = "block";
+  }
+  
+  function isDraw() {
+    let shouldReturn = true;
+    positionArray.forEach(({ state }) => {
+      if (state == "") shouldReturn = false;
+    });
+    return shouldReturn;
+  }
+
 
   // use loop to create 3x3 board with correct classes/set up object on board
   for (let index = 0; index < 9; index++) {

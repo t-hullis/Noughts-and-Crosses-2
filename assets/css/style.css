@@ -10,6 +10,10 @@
 p {
     color: white;
 }
+span {
+    color: black;
+    font-size: large;
+}
 #theBoard {
     background-color: blue;
     display: grid;
@@ -18,9 +22,9 @@ p {
    
 } 
 #gameOver {
-    position: absolute;
     width: 100vw;
     height: 100vh;
+    color: aliceblue;
 }
 .square {
     width: var(--sqrDimen);
