@@ -16,6 +16,11 @@ p {
     gap: 1px;
     grid-template-columns: repeat(3,var(--sqrDimenForGrid));
    
+} 
+#gameOver {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 .square {
     width: var(--sqrDimen);
