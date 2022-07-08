@@ -15,18 +15,25 @@ class ClassBoardObject {
         return false;
       };
       this.divs.querySelector("p").innerHTML = this.state;
-      if (wonGame()) { gameOver(); } ;
-      if (isDraw()) return console.log("this has worked");//gameOver("it is a draw");
+      if (wonGame()) { gameOverWin(); } ;
+      if (isDraw()) {gameOverDraw()};
       next == "X" ? (next = "O") : (next = "X");
     }
   }
 // this function runs at the end of the game
-  function gameOver() {
-    console.log("gogoog");
+  function gameOverWin() {
+    console.log("winner");
     board.style.display = "none";
-    document.getElementById("winner").innerHTML = ("the winner is" + ClassBoardObject.state) ;
+    document.getElementById("winner").innerHTML = ("  The winner is " + next ) ;
     document.getElementById("gameOver").style.display = "block";
   }
+  function gameOverDraw() {
+    console.log("draw");
+    board.style.display = "none";
+    document.getElementById("winner").innerHTML = (" This is a draw") ;
+    document.getElementById("gameOver").style.display = "block";
+  }
+  
   // this checks through each state of the baord. if all the states are  x or o, a draw will be delared
   function isDraw() {
     let shouldReturn = true;
