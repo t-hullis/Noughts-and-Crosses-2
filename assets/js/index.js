@@ -3,8 +3,16 @@ let board = document.getElementById("theBoard");
 let postionArray = [];
 //character for next move
 let  next = "X"; 
-//hide the game over div
-//document.getElementById('gameOver').style.display = "none";
+const conditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+    ];
 // create  Object 
 class boardObject {
     constructor(divs,index) {
@@ -36,24 +44,25 @@ function gameEnd() {
     //document.getElementById('gameOver').innerText = "hello"
     
 }
-gameEnd();
 
 function winner() {
-    let conditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-    ];
-    for(let i = 0; i< conditions.length; i++ ) {
-        let condition = conditions[i];
-        let a = postionArray[condition[0]];
-        let b = postionArray[condition[1]];
-        let c = postionArray[condition[2]];
+    
+    for(let i = 0; i<= 8; i++ ) {
+        const condition = conditions[i];
+        if(
+            condition[0] === "" ||
+            condition[1] === "" ||
+            condition[2] === "" 
+        ) {
+            gameEnd = false;
+            continue
+        };
+        if(
+            condition[0] === condition[1] &&
+            condition[0] === condition[1]
+        ) {
+            gameEnd = true;
+        }
     }
 }
 
