@@ -10,3 +10,13 @@ javascript, should allow me to give it all the features needed.
 
 4 : create functions for game over, draw and winnner.
 
+div.onclick = function() {
+        boardObject.state = next;
+        div.querySelector("p").innerText = next;
+        next = next == 'X' ? 'O' : 'X';
+        console.log("yes" + index + boardObject.state)
+        div.onclick = false;
+         
+    } 
+
+

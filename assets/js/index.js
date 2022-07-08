@@ -1,9 +1,44 @@
 let board = document.getElementById("theBoard");
 // array for board postions
-let postionArray = [];
-//character for next move
-let  next = "X"; 
-const conditions = [
+const positionArray = [];
+let next = "X";
+// create  Object 
+class ClassBoardObject {
+    constructor(divs, index) {
+      this.divs = divs;
+      this.index = index;
+      this.state = "";
+    }
+    clicked() {
+      this.state = next;
+      this.divs.onclick = function () {
+        return false;
+      };
+      this.divs.querySelector("p").innerHTML = this.state;
+      if (wonGame()) return gameOver("the winner is player " + this.state);
+      if (isDraw()) return gameOver("it is a draw");
+      next == "X" ? (next = "O") : (next = "X");
+    }
+  }
+
+
+  // use loop to create 3x3 board with correct classes/set up object on board
+  for (let index = 0; index < 9; index++) {
+    const div = document.createElement("div");
+    div.classList.add("square");
+    const square = new ClassBoardObject(div, index);
+    div.onclick = function () {
+      square.clicked();
+    };
+    div.appendChild(document.createElement("p"));
+    board.appendChild(div);
+    positionArray.push(square);
+  }
+
+
+//winning conditions
+function wonGame() {
+  const lines = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -12,60 +47,17 @@ const conditions = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-    ];
-// create  Object 
-class boardObject {
-    constructor(divs,index) {
-        this.divs = divs;
-        this.index = index;
-        this.state = "";
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (
+      positionArray[a].state !== "" &&
+      positionArray[a].state === positionArray[b].state &&
+      positionArray[a].state === positionArray[c].state
+    ) {
+      return true;
     }
-}
-// use loop to create 3x3 board with correct classes/set up object on board
-for (let index = 0; index < 9; index++) {
-    let div = document.createElement("div");
-    div.classList.add("square");
-    let square = new boardObject(div, index);
-    div.onclick = function() {
-        boardObject.state = next;
-        div.querySelector("p").innerText = next;
-        next = next == 'X' ? 'O' : 'X';
-        console.log("yes" + index + boardObject.state)
-        div.onclick = false;
-         
-    } 
-    board.appendChild(div);
-    div.appendChild(document.createElement("p"));
-    postionArray.push(square);
+  }
+  return false;
 }
 
-function gameEnd() {
-    document.getElementById('gameOver').style.display = "absolute";
-    //document.getElementById('gameOver').innerText = "hello"
-    
-}
-
-function winner() {
-    
-    for(let i = 0; i<= 8; i++ ) {
-        const condition = conditions[i];
-        if(
-            condition[0] === "" ||
-            condition[1] === "" ||
-            condition[2] === "" 
-        ) {
-            gameEnd = false;
-            continue
-        };
-        if(
-            condition[0] === condition[1] &&
-            condition[0] === condition[1]
-        ) {
-            gameEnd = true;
-        }
-    }
-}
-
-
-
-console.log(postionArray)
