@@ -4,30 +4,51 @@
     padding: 0;
 }
 :root {
-    --sqrDimen : 50px;
-    --sqrDimenForGrid : 52px
+    --sqrDimen : 90%;
+    --sqrDimenForGrid : 32%
 }
+body {
+    background-color: aqua;
+
+}
+
 p {
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 span {
     color: black;
     font-size: large;
 }
 #theBoard {
-    background-color: blue;
+    height: 60vh;
+    width: 60vh;
     display: grid;
-    gap: 1px;
     grid-template-columns: repeat(3,var(--sqrDimenForGrid));
+    /* align-items: center;
+    justify-content: center; */
+    position: absolute;
+    left: 30%;
+    bottom:20%;
    
 } 
 #gameOver {
+    display: none;
     width: 100vw;
     height: 100vh;
-    color: aliceblue;
+    color: black;
+    background-color: black;
 }
 .square {
     width: var(--sqrDimen);
     height: var(--sqrDimen);
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#winner {
+    color: white;
 }
