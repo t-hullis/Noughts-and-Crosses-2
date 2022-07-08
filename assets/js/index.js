@@ -30,7 +30,7 @@ class ClassBoardObject {
   
   function isDraw() {
     let shouldReturn = true;
-    positionArray.forEach(({ state }) => {
+    positionArray.forEach(function({state}) {
       if (state == "") shouldReturn = false;
     });
     return shouldReturn;
