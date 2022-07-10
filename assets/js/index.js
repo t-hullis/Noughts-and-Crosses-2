@@ -24,13 +24,13 @@ class ClassBoardObject {
   function gameOverWin() {
     console.log("winner");
     board.style.display = "none";
-    document.getElementById("winner").innerHTML = ("  The winner is " + next ) ;
+    document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
     document.getElementById("gameOver").style.display = "block";
   }
   function gameOverDraw() {
     console.log("draw");
     board.style.display = "none";
-    document.getElementById("winner").innerHTML = (" This is a draw") ;
+    document.getElementById("winner").innerHTML = (" this is a draw") ;
     document.getElementById("gameOver").style.display = "block";
   }
   
