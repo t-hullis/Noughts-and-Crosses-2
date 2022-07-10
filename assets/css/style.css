@@ -13,7 +13,7 @@ body {
     background-color: aqua;
     display: inline-block;
     position: absolute;
-    left: 25%;
+    left: 30%;
     top: 10%;
 }
 h1 {
@@ -73,4 +73,21 @@ span {
 }
 #winner {
     color: black;
+}
+
+@media only screen and (max-width: 400px) {
+    * {
+        font-size: 25px;
+    }
+    
+    #tocenter {
+        left:0;
+        }
+    #gameoverfont {
+        font-size: 15px;
+    }
+    #theBoard {
+        height: 150px;
+        width: 150px;
+    }
 }

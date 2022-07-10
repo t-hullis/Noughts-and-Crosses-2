@@ -22,13 +22,11 @@ class ClassBoardObject {
   }
 // this function runs at the end of the game
   function gameOverWin() {
-    console.log("winner");
     board.style.display = "none";
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
     document.getElementById("gameOver").style.display = "block";
   }
   function gameOverDraw() {
-    console.log("draw");
     board.style.display = "none";
     document.getElementById("winner").innerHTML = (" this is a draw") ;
     document.getElementById("gameOver").style.display = "block";
