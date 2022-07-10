@@ -15,8 +15,8 @@ class ClassBoardObject {
         return false;
       };
       this.divs.querySelector("p").innerHTML = this.state;
-      if (wonGame()) { gameOverWin(); } ;
-      if (isDraw()) {gameOverDraw()};
+      if (wonGame()) { gameOverWin(); } 
+      if (isDraw()) {gameOverDraw();}
       next == "X" ? (next = "O") : (next = "X");
     }
   }

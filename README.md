@@ -31,3 +31,14 @@ Passed CSS
 
 Passed Javascript
 <img src="assets/images/JSTest.png">
+
+## Deployment
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- From the source section drop-down menu, select the Master Branch
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+Live link https://t-hullis.github.io/Noughts-and-Crosses-2/
+
+## Credits
+The basic design for my winner function was inspired by what i saw online as all the function are very similar. https://www.youtube.com/watch?v=oZrp3Atkz18 i used this video to help me in perticular.
