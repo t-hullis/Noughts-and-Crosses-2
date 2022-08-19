@@ -9,85 +9,35 @@
     --sqrDimenForGrid : 32%;
     --fontsize : 50px;
 }
+
 body {
-    background-color: aqua;
-    display: inline-block;
-    position: absolute;
-    left: 30%;
-    top: 10%;
-}
-h1 {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
-}
-p {
-    color: white;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-}
-#gameOver > p {
-    color: black;
-}
-span {
-    color: black;
-    
-    padding-left: 15px;
-    font-size: var(--fontsize);
-}
-#toCenter{
-    position: absolute;
-    left: 50px;
-}
-#gameoverfont {
-    font-size: var(--fontsize);
-}
-#theBoard {
-    height: 60vh;
-    width: 60vh;
-    display: grid;
-    grid-template-columns: repeat(3,var(--sqrDimenForGrid));
-    
-} 
-#gameOver {
-    display: none;
-    width: 50vw;
-    height: 50vh;
-    color: black;
-    /* background-color: black; */
-    margin-top: 100px ;
-    
- 
-}
-.square {
-    width: var(--sqrDimen);
-    height: var(--sqrDimen);
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#winner {
-    color: black;
+    /* justify-content: center; */
 }
 
-@media only screen and (max-width: 400px) {
-    * {
-        font-size: 25px;
-    }
-    
-    #tocenter {
-        left:0;
-        }
-    #gameoverfont {
-        font-size: 15px;
-    }
-    #theBoard {
-        height: 150px;
-        width: 150px;
-    }
+#toCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh;
+}
+
+#theBoard {
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    position: relative;
+}
+
+.square {
+    padding: 10px black;
+    background-color: aliceblue;
 }
