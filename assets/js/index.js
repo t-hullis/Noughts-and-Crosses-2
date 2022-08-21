@@ -53,8 +53,25 @@ class ClassBoardObject {
     div.appendChild(document.createElement("p"));
     board.appendChild(div);
     positionArray.push(square);
+    
   }
 
+  console.log(positionArray)
+
+let reset = document.getElementById("reset");
+reset.onclick = function(){
+console.log(positionArray[4].state);
+console.log(positionArray);
+// board.forEach().innerHTML = "";
+p = document.getElementsByTagName("p");
+for(let c = 0; c < 9; c++){
+  p[c].innerHTML = ""
+}
+// console.log(p[c])
+for(let x = 0; x < 9; x++){
+  positionArray[x].state = "";
+}
+};
 
 //winning conditions
 function wonGame() {
