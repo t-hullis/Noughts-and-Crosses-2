@@ -10,10 +10,10 @@ class ClassBoardObject {
       this.state = "";
     }
     clicked() {
+      if(this.state == "X" || this.state == "O") {
+        return false
+      }
       this.state = next;
-      this.divs.onclick = function () {
-        return false;
-      };
       this.divs.querySelector("p").innerHTML = this.state;
       if (wonGame()) { gameOverWin(); } 
       if (isDraw()) {gameOverDraw();}
