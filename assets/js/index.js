@@ -22,12 +22,12 @@ class ClassBoardObject {
   }
 // this function runs at the end of the game
   function gameOverWin() {
-    board.style.display = "none";
+    // board.style.display = "none";
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
     document.getElementById("gameOver").style.display = "block";
   }
   function gameOverDraw() {
-    board.style.display = "none";
+    // board.style.display = "none";
     document.getElementById("winner").innerHTML = (" this is a draw") ;
     document.getElementById("gameOver").style.display = "block";
   }
@@ -60,9 +60,11 @@ class ClassBoardObject {
 
 let reset = document.getElementById("reset");
 reset.onclick = function(){
-console.log(positionArray[4].state);
-console.log(positionArray);
+// console.log(positionArray[4].state);
+// console.log(positionArray);
 // board.forEach().innerHTML = "";
+next = "X"
+document.getElementById("gameOver").style.display = "none";
 p = document.getElementsByTagName("p");
 for(let c = 0; c < 9; c++){
   p[c].innerHTML = ""
