@@ -44,6 +44,12 @@ button {
     grid-template-rows: 100px 100px 100px;
     position: relative;
 }
+#score {
+    width: 200px;
+    height: 40px;
+    background-color: aliceblue;
+    color: black;
+}
 
 .square {
     color: black;

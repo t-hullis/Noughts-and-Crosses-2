@@ -1,4 +1,8 @@
 let board = document.getElementById("theBoard");
+let score = document.getElementById("score");
+let x_score = 0; 
+let o_score = 0;
+score.innerHTML = "X score:  "+ x_score + " O score:  " + o_score;
 // array for board postions
 const positionArray = [];
 let next = "X";
@@ -20,14 +24,21 @@ class ClassBoardObject {
       next == "X" ? (next = "O") : (next = "X");
     }
   }
+
+
 // this function runs at the end of the game
   function gameOverWin() {
-    // board.style.display = "none";
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
     document.getElementById("gameOver").style.display = "block";
+    if(next == "X") {
+      x_score = x_score +1;
+    }
+    if(next == "O") {
+      o_score = o_score + 1;
+    }
+    score.innerHTML = "X score:  "+ x_score + "|" + " O score:  " + o_score;
   }
   function gameOverDraw() {
-    // board.style.display = "none";
     document.getElementById("winner").innerHTML = (" this is a draw") ;
     document.getElementById("gameOver").style.display = "block";
   }
@@ -60,16 +71,12 @@ class ClassBoardObject {
 
 let reset = document.getElementById("reset");
 reset.onclick = function(){
-// console.log(positionArray[4].state);
-// console.log(positionArray);
-// board.forEach().innerHTML = "";
 next = "X"
 document.getElementById("gameOver").style.display = "none";
 p = document.getElementsByTagName("p");
 for(let c = 0; c < 9; c++){
   p[c].innerHTML = ""
 }
-// console.log(p[c])
 for(let x = 0; x < 9; x++){
   positionArray[x].state = "";
 }
