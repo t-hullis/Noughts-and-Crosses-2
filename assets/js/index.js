@@ -2,7 +2,7 @@ let board = document.getElementById("theBoard");
 let score = document.getElementById("score");
 let x_score = 0; 
 let o_score = 0;
-score.innerHTML = "X score:  "+ x_score + " O score:  " + o_score;
+score.innerHTML = "Score X :  "+ x_score + "<br />"+ " Score O :  " + o_score;
 // array for board postions
 const positionArray = [];
 let next = "X";
@@ -18,9 +18,9 @@ class ClassBoardObject {
         return false
       }
       this.state = next;
-      this.divs.querySelector("p").innerHTML = this.state;
-      if (wonGame()) { gameOverWin(); } 
+      this.divs.querySelector("p").innerHTML = this.state; 
       if (isDraw()) {gameOverDraw();}
+      if (wonGame()) { gameOverWin(); }
       next == "X" ? (next = "O") : (next = "X");
     }
   }
@@ -29,29 +29,19 @@ class ClassBoardObject {
 // this function runs at the end of the game
   function gameOverWin() {
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
-    document.getElementById("gameOver").style.display = "block";
+    document.getElementById("gameOver").style.display = "flex";
     if(next == "X") {
       x_score = x_score +1;
     }
     if(next == "O") {
       o_score = o_score + 1;
     }
-    score.innerHTML = "X score:  "+ x_score + "|" + " O score:  " + o_score;
+    score.innerHTML = "Score X :  "+ x_score + "<br />"+ " Score O :  " + o_score;
   }
   function gameOverDraw() {
     document.getElementById("winner").innerHTML = (" this is a draw") ;
-    document.getElementById("gameOver").style.display = "block";
+    document.getElementById("gameOver").style.display = "flex";
   }
-  
-  // this checks through each state of the baord. if all the states are  x or o, a draw will be delared
-  function isDraw() {
-    let shouldReturn = true;
-    positionArray.forEach(function({state}) {
-      if (state == "") shouldReturn = false;
-    });
-    return shouldReturn;
-  }
-
 
   // use loop to create 3x3 board with correct classes/set up object on board
   for (let index = 0; index < 9; index++) {
@@ -105,5 +95,12 @@ function wonGame() {
     }
   }
   return false;
+}
+function isDraw() {
+  let shouldReturn = true;
+  positionArray.forEach(function({state}) {
+    if (state == "") shouldReturn = false;
+  });
+  return shouldReturn;
 }
 

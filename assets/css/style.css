@@ -25,6 +25,7 @@ button {
     bottom: 50px;
     width: 100px;
     height: 60px;
+    color: black;
 }
 #toCenter {
     display: flex;
@@ -45,10 +46,13 @@ button {
     position: relative;
 }
 #score {
+    display: flex;
     width: 200px;
     height: 40px;
     background-color: aliceblue;
     color: black;
+    align-items: center;
+    justify-content: center;
 }
 
 .square {
@@ -63,9 +67,12 @@ button {
 }
 #gameOver {
     position: absolute;
+    justify-content: center;
+    align-items: center;
     display: none;
     padding: 10px;
     width: 100vw;
     height: 100vh;
     background-color: black;
+    font-size: 200%;
 }
