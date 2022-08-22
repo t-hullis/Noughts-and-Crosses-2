@@ -76,3 +76,7 @@ button {
     background-color: black;
     font-size: 200%;
 }
+#gameOver > h1 {
+    position: absolute;
+    top: 35px;
+}
