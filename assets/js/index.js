@@ -1,4 +1,4 @@
-let board = document.getElementById("theBoard");
+let board = document.getElementById("the-board");
 let score = document.getElementById("score");
 let x_score = 0; 
 let o_score = 0;
@@ -29,7 +29,7 @@ class ClassBoardObject {
 // this function runs at the end of the game
   function gameOverWin() {
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
-    document.getElementById("gameOver").style.display = "flex";
+    document.getElementById("game-over").style.display = "flex";
     if(next == "X") {
       x_score = x_score +1;
     }
@@ -40,7 +40,7 @@ class ClassBoardObject {
   }
   function gameOverDraw() {
     document.getElementById("winner").innerHTML = (" this is a draw") ;
-    document.getElementById("gameOver").style.display = "flex";
+    document.getElementById("game-over").style.display = "flex";
   }
 
   // use loop to create 3x3 board with correct classes/set up object on board
@@ -62,7 +62,7 @@ class ClassBoardObject {
 let reset = document.getElementById("reset");
 reset.onclick = function(){
 next = "X"
-document.getElementById("gameOver").style.display = "none";
+document.getElementById("game-over").style.display = "none";
 p = document.getElementsByTagName("p");
 for(let c = 0; c < 9; c++){
   p[c].innerHTML = ""

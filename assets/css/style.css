@@ -27,14 +27,14 @@ button {
     height: 60px;
     color: black;
 }
-#toCenter {
+#to-center {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 10px 10px 10px;
 }
 
-#theBoard {
+#the-board {
     width: 300px;
     height: 300px;
     padding: 4px 10px 10px 4px;
@@ -65,7 +65,7 @@ button {
 .square > p {
     color: black;
 }
-#gameOver {
+#game-over {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ button {
     background-color: black;
     font-size: 200%;
 }
-#gameOver > h1 {
+#game-over > h1 {
     position: absolute;
     top: 35px;
 }
