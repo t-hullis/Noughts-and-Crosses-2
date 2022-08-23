@@ -12,13 +12,13 @@ class ClassBoardObject {
       this.divs = divs;
       this.index = index;
       this.state = "";
-    }
+    };
     clicked() {
       if(this.state == "X" || this.state == "O") {
         return false
-      }
+      };
       this.state = next;
-      this.divs.querySelector("p").innerHTML = this.state; 
+      this.divs.querySelector("p").innerHTML = this.state;
       if (isDraw()) {gameOverDraw();}
       if (wonGame()) { gameOverWin(); }
       next == "X" ? (next = "O") : (next = "X");
@@ -57,7 +57,6 @@ class ClassBoardObject {
     
   }
 
-  console.log(positionArray)
 
 let reset = document.getElementById("reset");
 reset.onclick = function(){
