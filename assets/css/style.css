@@ -80,3 +80,31 @@ button {
     position: absolute;
     top: 35px;
 }
+
+@media only screen and (max-height: 550px) {
+    #the-board {
+        width: 240px;
+        height: 240px;
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 80px 80px 80px;
+        position: relative;
+    }
+    button {
+        position: absolute;
+        bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-height: 450px) {
+    #the-board {
+        width: 180px;
+        height: 180px;
+        grid-template-columns: 60px 60px 60px;
+        grid-template-rows: 60px 60px 60px;
+        position: relative;
+    }
+    button {
+        position: absolute;
+        bottom: 20px;
+    }
+  }

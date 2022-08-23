@@ -4,7 +4,7 @@ let x_score = 0;
 let o_score = 0;
 score.innerHTML = "Score X :  "+ x_score + "<br />"+ " Score O :  " + o_score;
 // array for board postions
-const positionArray = [];
+let positionArray = [];
 let next = "X";
 // create  Object 
 class ClassBoardObject {
@@ -85,7 +85,7 @@ function wonGame() {
     [2, 4, 6],
   ];
   for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+    let [a, b, c] = lines[i];
     if (
       positionArray[a].state !== "" &&
       positionArray[a].state === positionArray[b].state &&
