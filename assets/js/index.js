@@ -2,10 +2,12 @@ let board = document.getElementById("the-board");
 let score = document.getElementById("score");
 let x_score = 0; 
 let o_score = 0;
+// Origninal scoreboard
 score.innerHTML = "Score X :  "+ x_score + "<br />"+ " Score O :  " + o_score;
 // array for board postions
 let positionArray = [];
 let next = "X";
+
 // create  Object 
 class ClassBoardObject {
     constructor(divs, index) {
@@ -25,11 +27,11 @@ class ClassBoardObject {
     }
   }
 
-
 // this function runs at the end of the game
   function gameOverWin() {
     document.getElementById("winner").innerHTML = ("  the winner is " + next ) ;
     document.getElementById("game-over").style.display = "flex";
+    //changes score if player wins
     if(next == "X") {
       x_score = x_score +1;
     }
@@ -38,6 +40,7 @@ class ClassBoardObject {
     }
     score.innerHTML = "Score X :  "+ x_score + "<br />"+ " Score O :  " + o_score;
   }
+
   function gameOverDraw() {
     document.getElementById("winner").innerHTML = (" this is a draw") ;
     document.getElementById("game-over").style.display = "flex";
@@ -54,10 +57,9 @@ class ClassBoardObject {
     div.appendChild(document.createElement("p"));
     board.appendChild(div);
     positionArray.push(square);
-    
   }
 
-
+// reset button function
 let reset = document.getElementById("reset");
 reset.onclick = function(){
 next = "X"
@@ -95,6 +97,7 @@ function wonGame() {
   }
   return false;
 }
+
 function isDraw() {
   let shouldReturn = true;
   positionArray.forEach(function({state}) {
